@@ -5,8 +5,9 @@
     "name": "react-nd-mobile-flashcards",
     "slug": "react-nd-mobile-flashcards",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "android": {
+      "useNextNotificationsApi": true
+    },
+    "assetBundlePatterns": ["**/*"]
   }
 }
