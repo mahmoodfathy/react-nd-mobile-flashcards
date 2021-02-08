@@ -42,8 +42,12 @@ const Quiz = ({ navigation, deck }) => {
   const [page, setPage] = useState(0);
   const [correctdisabled, setcorrectDisabled] = useState(false);
   const [Incorrectdisabled, setIncorrectDisabled] = useState(false);
+  const handleNotifications = async () => {
+    await clearLocalNotification();
+    setLocalNotification();
+  };
   useEffect(() => {
-    clearLocalNotification().then(setLocalNotification());
+    handleNotifications(); //called and fixed notification inside the useEffect as in review
     // const subscription = Notifications.addNotificationReceivedListener(
     //   (notification) => {
     //     console.log(notification);
