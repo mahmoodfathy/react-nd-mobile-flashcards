@@ -22,6 +22,7 @@ export async function setLocalNotification() {
     );
     console.log(permissionsNotifications.status);
     if (permissionsNotifications.status === "granted") {
+      Notifications.cancelAllScheduledNotificationsAsync();
       Notifications.setNotificationChannelAsync("reminder", {
         name: "reminder",
         importance: Notifications.AndroidImportance.HIGH,
